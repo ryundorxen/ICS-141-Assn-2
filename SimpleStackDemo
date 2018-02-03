@@ -1,0 +1,88 @@
+
+public class SimpleStackDemo {
+    public static void main (String[] args){
+
+        SimpleStack stack1 = new SimpleStack(10);
+
+        System.out.print("Demonstrate SimpleStack");
+        System.out.println();
+        System.out.println();
+        System.out.print("Push 10 items onto a 10 element stack");
+        System.out.println();
+        System.out.print("Pushing: ");
+
+        //First for loop to place items into new stack "stack1"
+
+        for(char ch = 'A'; ch < 'K'; ch++){
+            System.out.print(ch);
+            stack1.push(ch);
+        }
+
+        System.out.println();
+        System.out.print("Pop those 10 items from the stack");
+        System.out.println();
+        System.out.print("Popping: ");
+
+        //starts letters at "K"
+        char letter = 'K';
+
+        //while loop to pop letters off of the top of the stack
+        while (letter >= 'A'){
+            letter = stack1.pop();
+            System.out.print(letter);
+            letter--;
+        }
+
+        System.out.println();
+        System.out.println();
+        System.out.print("Next, use isEmpty() and isFull() to fill and empty the stack");
+        System.out.println();
+
+        System.out.print("Pushing: ");
+
+        //second for loop testing the isFull
+
+        for(char ch = 'A'; !stack1.isFull(); ch++){
+            System.out.print(ch);
+            stack1.push(ch);
+        }
+        System.out.println();
+
+        System.out.print("Popping: ");
+
+        //second while loop to pop from the top of stack using isEmpty
+
+        while (!stack1.isEmpty()){
+            char letter2 = stack1.pop();
+            System.out.print(letter2);
+        }
+        System.out.println();
+        System.out.println();
+        System.out.print("Now, use a 4 element stack to generate some errors");
+
+        SimpleStack stack2 = new SimpleStack(4);
+
+        System.out.println();
+
+        System.out.print("Pushing ");
+
+        for(char ch = '1'; ch <= '5'; ch++){
+            System.out.print(ch);
+            stack2.push(ch);
+        }
+        System.out.print("Popping ");
+
+        char letter2 = '5';
+
+        while (letter2 >= '1'){
+            letter2 = stack2.pop();
+            System.out.print(letter2);
+            letter2--;
+        }
+
+
+
+    }
+
+
+}

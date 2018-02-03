@@ -74,7 +74,7 @@ public class SimpleStackDemo {
 
         char letter2 = '5';
 
-        while (letter2 >= '1'){
+        while (letter2 >= '0'){
             letter2 = stack2.pop();
             System.out.print(letter2);
             letter2--;

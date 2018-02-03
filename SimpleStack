@@ -1,0 +1,49 @@
+package com.company;
+
+class SimpleStack {
+    char[] data; // this array holds that stack
+    int tos;        // index of top of stack
+
+    // Construct an empty stack given its size.
+    SimpleStack(int size) {
+        data = new char[size];  // create the array to hold the stack
+        tos = 0;
+    }
+
+    // Push a character onto the stack.
+    void push(char ch) {
+        if(isFull()) {
+            System.out.println(" – -- Stack is full.");
+            return;
+        }
+        data[tos] = ch;
+        tos++;
+    }
+
+    // Pop a character from the stack.
+    char pop() {
+        if(isEmpty()) {
+            System.out.println(" – -- Stack is empty.");
+            return (char) 0;  // a placeholder value
+        }
+        tos--;
+        return data[tos] ;
+    }
+
+    // You are asked to finish this method.
+    boolean isEmpty() {
+        //  finish the method according the spec specified later.
+        return tos == 0;
+
+
+    }
+
+    // You are asked to finish this method.
+    boolean isFull() {
+        //  finish the method according the spec specified later.
+        return tos == data.length;
+
+
+
+    }
+}
